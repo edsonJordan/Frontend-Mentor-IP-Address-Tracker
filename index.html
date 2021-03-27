@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- Styles tipography -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Styles Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<!-- Tittle -->
+<div class="container">
+  <div class="map-header"></div>
+  <!-- Map -->
+  <div class="map-footer" id="map"></div>
+  <!-- En Map -->
+  <div class="header-tapiz">
+      <div class="tapiz-tittle">
+        <h1>IP Address Tracker</h1>
+      </div>
+      <div class="tapiz-input">
+        <form class="form-elements" id="form" >
+          <input type="text" name="ip" class="input-ip" id="ip" placeholder="Search for any IP address or domain">
+          <button id="search-ip" class="btn-ip"></button>
+        </form>        
+      </div>
+      <div class="body-card">
+        <div class="card-label" attr-data="" id ="card-ip">IP Address</div>
+        <div class="card-label" attr-data="" id ="card-location" >Location</div>
+        <div class="card-label timezone" attr-data="" attr-timezone="UTC" id="card-timezone" >TIMEZONE   <!-- add offset value dynamically using the API --></b> </div>        
+        <div class="card-label" attr-data="" id="card-isp">ISP</div>        
+      </div>
+  </div>
+</div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="script.js"></script>
+
+
+</body>
+</html>

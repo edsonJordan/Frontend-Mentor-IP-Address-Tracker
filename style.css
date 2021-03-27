@@ -1,0 +1,126 @@
+:root{
+    --color-very-dark-gray: hsl(0, 0%, 17%);
+    --color-dark-gray:hsl(0, 0%, 59%); 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    overflow: hidden;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(0, 0, 0, .5);
+    opacity: 1; /* Firefox */
+  }
+form{
+    display: flex;
+    margin: initial;
+    width: 100%;
+}
+input, button{
+    outline: none;
+    border: none;
+    padding: 1.3rem;
+    font-size:  18px;
+}
+/* HEADER TAPIZ */
+.header-tapiz{
+    display: flex;
+    flex-direction: column;
+    
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+/* Div input text IP */
+.tapiz-input{
+    z-index: 1;
+    display: flex;
+    height: 3rem;   
+    width: 80%;
+}
+.tapiz-tittle{
+    z-index: 1;
+}
+.tapiz-tittle h1{
+    margin-bottom: 0;
+    color: white;
+}
+.input-ip{
+    width: 80%;
+    color: rgba(0, 0, 0);
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+.input-ip.error{
+    -webkit-box-shadow: 3px 3px 27px 3px rgba(255,0,0,0.52);
+-moz-box-shadow: 3px 3px 27px 3px rgba(255,0,0,0.52);
+box-shadow: 3px 3px 27px 3px rgba(255,0,0,0.52);
+
+}
+.btn-ip{
+    height: 100%;
+    width: 20%;
+    background-image: url(images/icon-arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+.btn-ip:hover{
+    cursor: pointer;
+}
+.body-card{
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    border-radius: .8rem;
+    background-color: white;
+    gap: .8rem;
+    width: 75%;
+    text-align: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    color:var(--color-dark-gray);
+    font-weight: 400;
+    padding: .8rem;
+    font-size: 12px;
+    letter-spacing: .1rem;
+    line-height: 1.3rem;
+}
+.body-card> *::after{
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-very-dark-gray);
+    display: block;
+   
+    letter-spacing: .14rem;
+    text-align: center;
+    content: attr(attr-data);
+}
+.body-card .timezone::after{
+    content:  attr(attr-timezone)" - "attr(attr-data);
+}
+.map-header{
+    position: fixed;
+    height: 30vh;
+    width: 100%;
+    background-image: url(images/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container-map{
+    height: 100%;
+    width: 100%;
+}
+.map-footer{
+    position: fixed;
+   
+    bottom: 0;
+    height: 70vh;
+    width: 100%;
+
+}
