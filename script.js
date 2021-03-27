@@ -7,7 +7,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
 /* Print map */
 const printMap = (node, lat, lng)=>{
     const map = new L.map(node).setView([lat, lng], 14);
-    L.marker([lat, lng]).addTo(map);
+    var greenIcon = new L.Icon({
+        iconUrl: 'images/icon-location.svg',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+      });
+    L.marker([lat, lng], {icon: greenIcon}).addTo(map);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
@@ -51,13 +58,11 @@ let getIp = async (data)=>{
   }
 /* Setting data ip into CARD */
 const dataCard = (ip, city, region, timezone, isp) =>{
-
     document.getElementById('card-ip').setAttribute('attr-data', ip);
     document.getElementById('card-location').setAttribute('attr-data', city+" - "+region);//card-timezone
     document.getElementById('card-timezone').setAttribute('attr-data', timezone.slice(1));
     document.getElementById('card-isp').setAttribute('attr-data', isp);
 }
-
 /* Form action */
   document.getElementById('form').addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -69,9 +74,6 @@ const dataCard = (ip, city, region, timezone, isp) =>{
     }
     validateIP(ip) ? getData(ip) :  errorInput();
 });
-   
-
-
 /* Function center */
     const  getData = async (dataIp = null) =>{
         var api_key = "at_qxiMavRHNgcgav70MIvkhQDQbLZPW";
